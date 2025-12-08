@@ -1,0 +1,7 @@
+langchain-community
+langchain-ollama
+langchain-core
+streamlit
+pandas
+psycopg2-binary
+
