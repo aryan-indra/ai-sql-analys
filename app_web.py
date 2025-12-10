@@ -399,4 +399,3 @@ if st.session_state.query_history:
                     st.dataframe(entry["result"], use_container_width=True)
                 else:
                     st.text(str(entry["result"]))
-

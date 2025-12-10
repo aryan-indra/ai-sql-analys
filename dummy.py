@@ -402,9 +402,10 @@ if user_query:
 
         # -------- Execute SQL --------
         with st.spinner("Executing query & building visuals..."):
-            try: 
+            try:
                 df = run_sql_to_df(st.session_state.db, sql)
 
+                # Make column names unique to avoid plotting issues
                 if df is not None:
                     df = df.copy()
                     df.columns = make_unique_columns(df.columns)
@@ -416,7 +417,7 @@ if user_query:
                 if df is None or df.empty:
                     st.info("(No data found)")
                 else:
-                    auto_advanced_viz(df)  
+                    auto_advanced_viz(df)  # ⬅️ keep your advanced plotting
 
             except Exception as e:
                 err = str(e)
